@@ -7,6 +7,7 @@
 - Author: Alessandro Mainardi (ORCID: 0009-0003-7003-7247, Wikidata: Q141886579)
 - Academic Affiliation: Alma Mater Studiorum - Università di Bologna, Dipartimento di Informatica - Scienza e Ingegneria (DISI)
 - Monograph DOI: 10.5281/zenodo.23781231
+- Monograph Wikidata Entity: https://www.wikidata.org/wiki/Q142075894 (Q142075894)
 - Monograph Length: 44 pages (ISO A4, formal LaTeX specification)
 - Monograph PDF: https://alexmaina.dev/RosettaEdge/rosettaedge-monografia-tecnica.pdf
 - Interactive Documentation Portal: https://alexmaina.dev/RosettaEdge/doc/
