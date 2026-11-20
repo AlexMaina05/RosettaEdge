@@ -2,7 +2,6 @@
 **Il ponte mobile edge on-device tra il Fascicolo Sanitario Elettronico (FSE) e Apple Health.**
 
 [![Author](https://img.shields.io/badge/Author-Alessandro_Mainardi-00e5ff?style=for-the-badge)](https://alexmaina.dev/)
-[![Affiliation](https://img.shields.io/badge/UniBo-DISI-CC0000?style=for-the-badge)](https://disi.unibo.it/)
 [![ORCID](https://img.shields.io/badge/ORCID-0009--0003--7003--7247-A6CE39?style=for-the-badge&logo=orcid&logoColor=white)](https://orcid.org/0009-0003-7003-7247)
 [![Wikidata](https://img.shields.io/badge/Wikidata-Q141886579-3399CC?style=for-the-badge&logo=wikidata&logoColor=white)](https://www.wikidata.org/wiki/Q141886579)
 [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.23781231-007EC6?style=for-the-badge)](https://doi.org/10.5281/zenodo.23781231)
@@ -26,15 +25,15 @@
 - [Ecosistema Avanzato (iOS & watchOS)](#-ecosistema-avanzato-ios--watchos)
 - [Privacy & GDPR Compliance](#-privacy--gdpr-compliance)
 - [Metriche Cliniche Supportate](#-metriche-cliniche-supportate)
-- [Autore & Attribuzione Accademica](#-autore--attribuzione-accademica)
+- [Autore & Attribuzione](#-autore--attribuzione)
 
 ---
 
 ## 📚 Documentazione di Progetto & Monografia
 
-Oltre al presente README e alla [Homepage Interattiva](https://alexmaina.dev/RosettaEdge/), il progetto include una corposa monografia accademica e documentazione tecnica strutturata:
+Oltre al presente README e alla [Homepage Interattiva](https://alexmaina.dev/RosettaEdge/), il progetto include una corposa monografia tecnica indipendente e documentazione tecnica strutturata:
 
-- 📄 [**Monografia Tecnica Ufficiale (PDF, 44 Pagine)**](https://alexmaina.dev/RosettaEdge/rosettaedge-monografia-tecnica.pdf): Trattato formale in LaTeX redatto da Alessandro Mainardi (UniBo DISI). Include specifiche matematiche, modello di minaccia STRIDE, validazione dell'Identity Firewall (D.M. 23/12/1976 + Jaro-Winkler), benchmark sperimentali su iPhone 15 Pro / iPhone 13 e appendici ontologiche LOINC complete. DOI: [10.5281/zenodo.23781231](https://doi.org/10.5281/zenodo.23781231).
+- 📄 [**Monografia Tecnica Ufficiale (PDF, 44 Pagine)**](https://alexmaina.dev/RosettaEdge/rosettaedge-monografia-tecnica.pdf): Trattato formale in LaTeX redatto da Alessandro Mainardi. Include specifiche matematiche, modello di minaccia STRIDE, validazione dell'Identity Firewall (D.M. 23/12/1976 + Jaro-Winkler), benchmark sperimentali su iPhone 15 Pro / iPhone 13 e appendici ontologiche LOINC complete. DOI: [10.5281/zenodo.23781231](https://doi.org/10.5281/zenodo.23781231).
 - 🏛️ [**Analisi dello Stato dell'Arte**](https://alexmaina.dev/RosettaEdge/doc/#/Stato_dell_Arte): Analisi del panorama italiano (FSE 2.0, HL7 CDA R2, standard regionali Emilia-Romagna/Lombardia/Veneto) e internazionale (FHIR R4).
 - ⚙️ [**Technical Design Document (TDD)**](https://alexmaina.dev/RosettaEdge/doc/#/tdd): Il cuore ingegneristico (modello Producer-Consumer, schema SwiftData `@ModelActor`, crittografia Secure Enclave, Swift Concurrency).
 - 🚀 [**Sviluppi Futuri e Roadmap**](https://alexmaina.dev/RosettaEdge/doc/#/Sviluppi_Futuri): Vision evolutiva (v4.0+), inclusi Small Language Models (SLM) on-device con CoreML ed European Health Data Space (EHDS).
@@ -126,12 +125,11 @@ Il motore di mappatura semantica trasla i codici identificativi (LOINC) presenti
 
 ---
 
-## 👤 Autore & Attribuzione Accademica
+## 👤 Autore & Attribuzione
 
 Il progetto **RosettaEdge** è ideato, formalizzato e sviluppato da:
 
 - **Autore:** [Alessandro Mainardi](https://alexmaina.dev/)
-- **Affiliazione:** Alma Mater Studiorum — Università di Bologna, Dipartimento di Informatica — Scienza e Ingegneria (DISI)
 - **ORCID:** [0009-0003-7003-7247](https://orcid.org/0009-0003-7003-7247)
 - **Wikidata:** [Q141886579](https://www.wikidata.org/wiki/Q141886579)
 - **Concept DOI:** [10.5281/zenodo.23781231](https://doi.org/10.5281/zenodo.23781231) (Zenodo / OpenAIRE)

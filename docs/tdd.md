@@ -236,7 +236,7 @@ Il *Family Vault* supporta la sincronizzazione opzionale tramite il **CloudKit P
 
 ## 📚 Riferimenti Bibliografici & Monografia Ufficiale
 
-- **Monografia Tecnica Accademica**: [Scarica il Paper Completo (PDF, 44 Pagine)](https://alexmaina.dev/RosettaEdge/rosettaedge-monografia-tecnica.pdf)
-- **Autore**: [Alessandro Mainardi](https://alexmaina.dev/) — Alma Mater Studiorum Università di Bologna (DISI)
+- **Monografia Tecnica Indipendente**: [Scarica il Paper Completo (PDF, 44 Pagine)](https://alexmaina.dev/RosettaEdge/rosettaedge-monografia-tecnica.pdf)
+- **Autore**: [Alessandro Mainardi](https://alexmaina.dev/) — Progetto Indipendente Open-Source
 - **Identificatori Persistenti**: ORCID [0009-0003-7003-7247](https://orcid.org/0009-0003-7003-7247) · Wikidata [Q141886579](https://www.wikidata.org/wiki/Q141886579) · DOI [10.5281/zenodo.23781231](https://doi.org/10.5281/zenodo.23781231)
 - **Portale Ufficiale**: [alexmaina.dev](https://alexmaina.dev/)

@@ -1,11 +1,10 @@
 # RosettaEdge — Mobile Edge Zero-Cloud Architecture for FSE 2.0 & Apple HealthKit
 
-> RosettaEdge is a native iOS 17+ and watchOS 10+ mobile edge application and formal engineering framework developed by Alessandro Mainardi (Alma Mater Studiorum - University of Bologna). It achieves deterministic on-device semantic interoperability between Italian Electronic Health Records (Fascicolo Sanitario Elettronico - FSE 2.0 / HL7 CDA R2) and Apple HealthKit under a strict Zero-Cloud and Privacy-by-Design paradigm (GDPR Art. 9).
+> RosettaEdge is a native iOS 17+ and watchOS 10+ mobile edge application and formal engineering framework developed by Alessandro Mainardi. It achieves deterministic on-device semantic interoperability between Italian Electronic Health Records (Fascicolo Sanitario Elettronico - FSE 2.0 / HL7 CDA R2) and Apple HealthKit under a strict Zero-Cloud and Privacy-by-Design paradigm (GDPR Art. 9).
 
 ## Key Metadata
 
 - Author: Alessandro Mainardi (ORCID: 0009-0003-7003-7247, Wikidata: Q141886579)
-- Academic Affiliation: Alma Mater Studiorum - Università di Bologna, Dipartimento di Informatica - Scienza e Ingegneria (DISI)
 - Monograph DOI: 10.5281/zenodo.23781231
 - Monograph Wikidata Entity: https://www.wikidata.org/wiki/Q142075894 (Q142075894)
 - Monograph Length: 44 pages (ISO A4, formal LaTeX specification)

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RosettaEdge | Mobile Edge Zero-Cloud per FSE 2.0 e Apple HealthKit</title>
-  <meta name="description" content="RosettaEdge: architettura mobile-edge Zero-Cloud per l'interoperabilità tra FSE 2.0 (HL7 CDA R2) e Apple HealthKit. Monografia accademica di 44 pagine (UniBo).">
+  <meta name="description" content="RosettaEdge: architettura mobile-edge Zero-Cloud per l'interoperabilità tra FSE 2.0 (HL7 CDA R2) e Apple HealthKit. Progetto indipendente di Alessandro Mainardi e monografia tecnica di 44 pagine.">
   <meta name="author" content="Alessandro Mainardi">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <meta name="theme-color" content="#070913">
@@ -16,7 +16,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://alexmaina.dev/RosettaEdge/">
   <meta property="og:title" content="RosettaEdge — Mobile Edge Zero-Cloud per FSE 2.0 e Apple HealthKit">
-  <meta property="og:description" content="Pipeline deterministica on-device tra HL7 CDA R2 e Apple HealthKit. Privacy-by-Design, Identity Firewall, Secure Enclave e Clinical Decision Support sviluppati da Alessandro Mainardi (UniBo DISI).">
+  <meta property="og:description" content="Pipeline deterministica on-device tra HL7 CDA R2 e Apple HealthKit. Privacy-by-Design, Identity Firewall, Secure Enclave e Clinical Decision Support sviluppati da Alessandro Mainardi.">
   <meta property="og:image" content="https://alexmaina.dev/RosettaEdge/assets/images/rosetta-edge.webp">
   <meta property="og:locale" content="it_IT">
   <meta property="og:site_name" content="Alessandro Mainardi">
@@ -33,7 +33,6 @@
   <meta name="citation_title" content="RosettaEdge: Un'Architettura Mobile Edge Zero-Cloud per l'Interoperabilità Semantica tra Fascicolo Sanitario Elettronico (HL7 CDA) e Apple HealthKit">
   <meta name="citation_author" content="Mainardi, Alessandro">
   <meta name="citation_author_orcid" content="https://orcid.org/0009-0003-7003-7247">
-  <meta name="citation_author_institution" content="Alma Mater Studiorum - Università di Bologna">
   <meta name="citation_publication_date" content="2026/10/28">
   <meta name="citation_online_date" content="2026/10/28">
   <meta name="citation_pdf_url" content="https://alexmaina.dev/RosettaEdge/rosettaedge-monografia-tecnica.pdf">
@@ -42,88 +41,83 @@
   <meta name="citation_keywords" content="HL7 CDA; Apple HealthKit; FSE 2.0; LOINC; UCUM; Zero-Cloud; Privacy by Design; Mobile Edge Computing; SwiftData">
 
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Person",
-        "@id": "https://alexmaina.dev/#person",
-        "name": "Alessandro Mainardi",
-        "url": "https://alexmaina.dev/",
-        "jobTitle": "Software Developer & Computer Engineering Student",
-        "email": "mailto:maina@alexmaina.dev",
-        "affiliation": {
-          "@type": "EducationalOrganization",
-          "name": "Alma Mater Studiorum - Università di Bologna",
-          "department": "DISI - Dipartimento di Informatica - Scienza e Ingegneria",
-          "url": "https://www.unibo.it"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://alexmaina.dev/#person",
+      "name": "Alessandro Mainardi",
+      "url": "https://alexmaina.dev/",
+      "jobTitle": "Software Developer & Computer Engineering Student",
+      "email": "mailto:maina@alexmaina.dev",
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "ORCID",
+          "value": "0009-0003-7003-7247",
+          "url": "https://orcid.org/0009-0003-7003-7247"
         },
-        "identifier": [
-          {
-            "@type": "PropertyValue",
-            "propertyID": "ORCID",
-            "value": "0009-0003-7003-7247",
-            "url": "https://orcid.org/0009-0003-7003-7247"
-          },
-          {
-            "@type": "PropertyValue",
-            "propertyID": "Wikidata",
-            "value": "Q141886579",
-            "url": "https://www.wikidata.org/wiki/Q141886579"
-          }
-        ],
-        "sameAs": [
-          "https://orcid.org/0009-0003-7003-7247",
-          "https://www.wikidata.org/wiki/Q141886579",
-          "https://doi.org/10.5281/zenodo.23781231",
-          "https://github.com/AlexMaina05",
-          "https://alexmaina.dev/"
-        ]
+        {
+          "@type": "PropertyValue",
+          "propertyID": "Wikidata",
+          "value": "Q141886579",
+          "url": "https://www.wikidata.org/wiki/Q141886579"
+        }
+      ],
+      "sameAs": [
+        "https://orcid.org/0009-0003-7003-7247",
+        "https://www.wikidata.org/wiki/Q141886579",
+        "https://github.com/AlexMaina05",
+        "https://alexmaina.dev/"
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://alexmaina.dev/RosettaEdge/#software",
+      "name": "RosettaEdge",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "iOS 17.0+, watchOS 10.0+",
+      "author": {
+        "@id": "https://alexmaina.dev/#person"
       },
-      {
-        "@type": "SoftwareApplication",
-        "@id": "https://alexmaina.dev/RosettaEdge/#software",
-        "name": "RosettaEdge",
-        "applicationCategory": "HealthApplication",
-        "sameAs": "https://www.wikidata.org/wiki/Q142075894",
-        "operatingSystem": "iOS 17.0+, watchOS 10.0+",
-        "author": {
-          "@id": "https://alexmaina.dev/#person"
-        },
-        "description": "Architettura software mobile edge per l'interoperabilità semantica tra Fascicolo Sanitario Elettronico (HL7 CDA R2) e Apple HealthKit con tecnologia Zero-Cloud e crittografia Secure Enclave.",
-        "offers": {
-          "@type": "Offer",
-          "price": "0.00",
-          "priceCurrency": "EUR"
-        },
-        "softwareRequirements": "iOS 17.0 o successivo, watchOS 10.0 o successivo",
-        "image": "https://alexmaina.dev/RosettaEdge/assets/images/rosetta-edge.webp",
-        "codeRepository": "https://github.com/AlexMaina05/RosettaEdge",
-        "license": "https://creativecommons.org/licenses/by/4.0/"
+      "description": "Architettura software mobile edge per l'interoperabilità semantica tra Fascicolo Sanitario Elettronico (HL7 CDA R2) e Apple HealthKit con tecnologia Zero-Cloud e crittografia Secure Enclave.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0.00",
+        "priceCurrency": "EUR"
       },
-      {
-        "@type": "ScholarlyArticle",
-        "@id": "https://doi.org/10.5281/zenodo.23781231",
-        "headline": "RosettaEdge: Un'Architettura Mobile Edge Zero-Cloud per l'Interoperabilità Semantica tra Fascicolo Sanitario Elettronico (HL7 CDA) e Apple HealthKit",
-        "author": {
-          "@id": "https://alexmaina.dev/#person"
-        },
-        "datePublished": "2026-10",
-        "inLanguage": "it",
-        "identifier": "10.5281/zenodo.23781231",
-        "sameAs": [
-          "https://doi.org/10.5281/zenodo.23781231",
-          "https://www.wikidata.org/wiki/Q142075894"
-        ],
-        "publisher": {
-          "@type": "Organization",
-          "name": "Zenodo / CERN Open Science"
-        },
-        "url": "https://doi.org/10.5281/zenodo.23781231"
+      "softwareRequirements": "iOS 17.0 o successivo, watchOS 10.0 o successivo",
+      "image": "https://alexmaina.dev/RosettaEdge/assets/images/rosetta-edge.webp",
+      "codeRepository": "https://github.com/AlexMaina05/RosettaEdge",
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "isBasedOn": {
+        "@id": "https://doi.org/10.5281/zenodo.23781231"
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://doi.org/10.5281/zenodo.23781231",
+      "headline": "RosettaEdge: Un'Architettura Mobile Edge Zero-Cloud per l'Interoperabilità Semantica tra Fascicolo Sanitario Elettronico (HL7 CDA) e Apple HealthKit",
+      "author": {
+        "@id": "https://alexmaina.dev/#person"
+      },
+      "datePublished": "2026-10",
+      "inLanguage": "it",
+      "identifier": "10.5281/zenodo.23781231",
+      "sameAs": [
+        "https://doi.org/10.5281/zenodo.23781231",
+        "https://www.wikidata.org/wiki/Q142075894"
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "Zenodo / CERN Open Science"
+      },
+      "url": "https://doi.org/10.5281/zenodo.23781231"
+    }
+  ]
+}
+</script>
 
   <style>
     :root {
@@ -641,7 +635,7 @@
     <div class="container">
       <a href="https://alexmaina.dev/about/" class="author-pill" title="Profilo Ufficiale di Alessandro Mainardi">
         <img src="https://alexmaina.dev/assets/images/profile.webp" alt="Alessandro Mainardi" onerror="this.style.display='none'">
-        <span>Progetto Accademico & Ingegneristico di <strong>Alessandro Mainardi</strong> (UniBo DISI)</span>
+        <span>Progetto Indipendente di Ricerca &amp; Ingegneria di <strong>Alessandro Mainardi</strong></span>
         <span style="color: var(--accent);">→</span>
       </a>
 
@@ -690,7 +684,7 @@
               RosettaEdge: Monografia Tecnica Architetturale
             </h2>
             <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.6; margin-bottom: 16px;">
-              Un trattato esaustivo di <strong>44 pagine</strong> redatto in formato LaTeX accademico, con analisi formale dello stato dell'arte (FSE 2.0, HL7 CDA R2, FHIR R4), modello di minaccia STRIDE, formalizzazione dell'Identity Firewall (D.M. 23/12/1976 + Jaro-Winkler), benchmark sperimentali su iPhone 15 Pro vs iPhone 13 e appendici ontologiche complete.
+              Un trattato esaustivo di <strong>44 pagine</strong> redatto in formato LaTeX, con analisi formale dello stato dell'arte (FSE 2.0, HL7 CDA R2, FHIR R4), modello di minaccia STRIDE, formalizzazione dell'Identity Firewall (D.M. 23/12/1976 + Jaro-Winkler), benchmark sperimentali su iPhone 15 Pro vs iPhone 13 e appendici ontologiche complete.
             </p>
             <div class="monograph-meta-row">
               <span class="tech-badge highlight">Autore: Alessandro Mainardi</span>
@@ -726,7 +720,7 @@
   journal = {Technical Monograph in Health Informatics},
   year    = {2026},
   doi     = {10.5281/zenodo.23781231},
-  note    = {Alma Mater Studiorum Universit{\`a} di Bologna. ORCID: 0009-0003-7003-7247}
+  note    = {Independent Technical Monograph. ORCID: 0009-0003-7003-7247}
 }
             </div>
           </div>
@@ -1022,7 +1016,7 @@
           <h5>Alessandro Mainardi</h5>
           <ul>
             <li><a href="https://alexmaina.dev/">alexmaina.dev (Sito Ufficiale)</a></li>
-            <li><a href="https://alexmaina.dev/about/">Profilo & Bio Accademica</a></li>
+            <li><a href="https://alexmaina.dev/about/">Profilo &amp; Contatti</a></li>
             <li><a href="https://alexmaina.dev/projects/">Altri Progetti Software</a></li>
             <li><a href="https://alexmaina.dev/guide/">Guide Tecniche & Sistemi</a></li>
             <li><a href="mailto:maina@alexmaina.dev">maina@alexmaina.dev</a></li>
@@ -1032,7 +1026,7 @@
 
       <div class="footer-bottom">
         <div>
-          &copy; 2026 Alessandro Mainardi &middot; Alma Mater Studiorum Università di Bologna &middot; Rilasciato con licenza <a href="https://creativecommons.org/licenses/by/4.0/" style="color:var(--text-muted);" target="_blank" rel="noopener">CC BY 4.0</a>.
+          &copy; 2026 Alessandro Mainardi &middot; Progetto Indipendente Open-Source &middot; Rilasciato con licenza <a href="https://creativecommons.org/licenses/by/4.0/" style="color:var(--text-muted);" target="_blank" rel="noopener">CC BY 4.0</a>.
         </div>
         <div>
           Ingegneria del Software Sanitario ed Interoperabilità Semantica Edge
@@ -1066,7 +1060,7 @@
         "  journal = {Technical Monograph in Health Informatics},",
         "  year    = {2026},",
         "  doi     = {10.5281/zenodo.23781231},",
-        "  note    = {Alma Mater Studiorum Universit{\\`a} di Bologna. ORCID: 0009-0003-7003-7247}",
+        "  note    = {Independent Technical Monograph. ORCID: 0009-0003-7003-7247}",
         "}"
       ].join("\n");
       navigator.clipboard.writeText(code).then(() => {
