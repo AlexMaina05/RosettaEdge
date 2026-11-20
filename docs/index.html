@@ -1059,14 +1059,16 @@
     }
 
     function copyBibtex() {
-      const code = `@article{mainardi2026rosettaedge,
-  author  = {Mainardi, Alessandro},
-  title   = {{RosettaEdge: Un'Architettura Mobile Edge Zero-Cloud per l'Interoperabilit{\\`a} Semantica tra Fascicolo Sanitario Elettronico (HL7 CDA) e Apple HealthKit}},
-  journal = {Technical Monograph in Health Informatics},
-  year    = {2026},
-  doi     = {10.5281/zenodo.23781231},
-  note    = {Alma Mater Studiorum Universit{\\`a} di Bologna. ORCID: 0009-0003-7003-7247}
-}`;
+      const code = [
+        "@article{mainardi2026rosettaedge,",
+        "  author  = {Mainardi, Alessandro},",
+        "  title   = {{RosettaEdge: Un'Architettura Mobile Edge Zero-Cloud per l'Interoperabilit{\\`a} Semantica tra Fascicolo Sanitario Elettronico (HL7 CDA) e Apple HealthKit}},",
+        "  journal = {Technical Monograph in Health Informatics},",
+        "  year    = {2026},",
+        "  doi     = {10.5281/zenodo.23781231},",
+        "  note    = {Alma Mater Studiorum Universit{\\`a} di Bologna. ORCID: 0009-0003-7003-7247}",
+        "}"
+      ].join("\n");
       navigator.clipboard.writeText(code).then(() => {
         const btn = document.querySelector('.copy-btn');
         btn.innerText = 'Copiato!';
