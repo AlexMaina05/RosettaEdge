@@ -19,14 +19,14 @@
   <meta property="og:description" content="Pipeline deterministica on-device tra HL7 CDA R2 e Apple HealthKit. Privacy-by-Design, Identity Firewall, Secure Enclave e Clinical Decision Support sviluppati da Alessandro Mainardi.">
   <meta property="og:image" content="https://alexmaina.dev/RosettaEdge/assets/images/rosetta-edge.webp">
   <meta property="og:locale" content="it_IT">
-  <meta property="og:site_name" content="Alessandro Mainardi">
+  <meta property="og:site_name" content="alexmaina.dev">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="RosettaEdge | Mobile Edge Zero-Cloud per FSE 2.0 e Apple HealthKit">
-  <meta name="twitter:description" content="Ingegneria del software sanitario: transcodifica ontologica LOINC -> HealthKit on-device, zero-cloud e privacy-by-design.">
+  <meta name="twitter:description" content="Ingegneria del software sanitario: transcodifica ontologica LOINC -> HealthKit / FHIR R4 on-device, zero-cloud e privacy-by-design.">
   <meta name="twitter:image" content="https://alexmaina.dev/RosettaEdge/assets/images/rosetta-edge.webp">
-  <meta name="twitter:creator" content="@AlexMaina05">
+  <meta name="twitter:creator" content="@Alex_Maina_">
 
   <!-- Schema.org Structured Data -->
     <!-- Google Scholar & Academic Indexing (Highwire Press Meta Tags) -->
@@ -128,7 +128,7 @@
       --border-accent: rgba(0, 229, 255, 0.3);
       --text: #f1f5f9;
       --text-muted: #94a3b8;
-      --text-dim: #64748b;
+      --text-dim: #94a3b8;
       --accent: #00e5ff;
       --accent-secondary: #38bdf8;
       --accent-purple: #8b5cf6;
@@ -597,10 +597,20 @@
     }
 
     @media (max-width: 860px) {
-      .hero-title { font-size: 2.75rem; }
+      .hero-title { font-size: 2.5rem; }
       .monograph-content { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; gap: 30px; }
-      .nav-links { display: none; }
+      .nav-container { flex-wrap: wrap; gap: 10px; padding: 12px 16px; }
+      .nav-links {
+        display: flex;
+        width: 100%;
+        overflow-x: auto;
+        gap: 14px;
+        padding-bottom: 4px;
+        white-space: nowrap;
+        scrollbar-width: none;
+      }
+      .nav-links::-webkit-scrollbar { display: none; }
     }
   </style>
 </head>
@@ -619,7 +629,7 @@
         <li><a href="#architettura">Architettura</a></li>
         <li><a href="#loinc">LOINC Explorer</a></li>
         <li><a href="#monografia">Monografia (PDF)</a></li>
-        <li><a href="#sicurezza">Zero-Cloud & GDPR</a></li>
+        <li><a href="#sicurezza">Zero-Cloud &amp; GDPR</a></li>
         <li><a href="https://alexmaina.dev/RosettaEdge/doc/">Documentazione</a></li>
         <li>
           <a href="https://alexmaina.dev/" class="nav-back-main">
@@ -630,6 +640,7 @@
     </div>
   </header>
 
+  <main id="main-content">
   <!-- Hero Section -->
   <section class="hero">
     <div class="container">
@@ -755,7 +766,7 @@
           <div class="card-icon">⚡</div>
           <h3 class="card-title">SAX Streaming Parser</h3>
           <p class="card-text">
-            Elaborazione a stati finiti con complessità di memoria costante \(\mathcal{O}(d_{\max})\). Neutralizza istantaneamente gli attacchi di espansione XML (Billion Laughs / XXE) e garantisce zero terminazioni da parte del demone Jetsam di iOS.
+            Elaborazione a stati finiti con complessità di memoria costante <code>O(d<sub>max</sub>)</code>. Neutralizza istantaneamente gli attacchi di espansione XML (Billion Laughs / XXE) e garantisce zero terminazioni da parte del demone Jetsam di iOS.
           </p>
         </div>
 
@@ -764,16 +775,16 @@
           <div class="card-icon">🛡️</div>
           <h3 class="card-title">Identity Firewall</h3>
           <p class="card-text">
-            Previene l'inquinamento dei grafici di Apple Salute con i dati clinici dei familiari. Verifica la congruità aritmetica del Codice Fiscale (D.M. 23/12/1976) e applica la distanza di Jaro-Winkler (\(\tau = 0.88\)) su nominativi parziali.
+            Previene l'inquinamento dei grafici di Apple Salute con i dati clinici dei familiari. Verifica la congruità aritmetica del Codice Fiscale (D.M. 23/12/1976) e applica la distanza di Jaro-Winkler (<code>&tau; = 0.88</code>) su nominativi parziali.
           </p>
         </div>
 
         <!-- Feature 3 -->
         <div class="card">
           <div class="card-icon">🔬</div>
-          <h3 class="card-title">Matrice Ontologica LOINC</h3>
+          <h3 class="card-title">Doppio Binario LOINC</h3>
           <p class="card-text">
-            Mappatura deterministica e normalizzazione dimensionale conforme a UCUM. Converte analiti ematochimici e parametri cardiometabolici in tipi quantitativi nativi <code>HKQuantityTypeIdentifier</code>.
+            Mappatura deterministica conforme a UCUM: instrada i parametri fisiologici verso <code>HKQuantityTypeIdentifier</code> e isola la chimica clinica nel vault crittografato SwiftData sotto forma di risorse standard FHIR R4.
           </p>
         </div>
 
@@ -812,24 +823,24 @@
     <div class="container">
       <div class="section-header">
         <div class="section-eyebrow">Interoperabilità Semantica</div>
-        <h2 class="section-title">LOINC $\rightarrow$ HealthKit Explorer</h2>
+        <h2 class="section-title">LOINC &rarr; HealthKit / FHIR R4 Explorer</h2>
         <p class="section-desc">
-          Esplora interattivamente il catalogo delle corrispondenze ontologiche supportate nativamente dal motore RosettaEdge.
+          Esplora interattivamente il catalogo delle corrispondenze ontologiche e il Doppio Binario Semantico (parametri vitali su HealthKit vs. chimica clinica su vault FHIR R4) supportati dal motore RosettaEdge.
         </p>
       </div>
 
       <div class="explorer-box">
-        <input type="text" id="loincSearch" class="explorer-search" placeholder="Cerca parametro (es. Glicemia, Pressione, Colesterolo, Sodio, 15074-8)..." oninput="filterLoinc()">
+        <input type="text" id="loincSearch" class="explorer-search" aria-label="Cerca codice LOINC o parametro clinico" placeholder="Cerca parametro (es. Glicemia, Pressione, Colesterolo, Sodio, 15074-8)..." oninput="filterLoinc()">
 
         <div class="table-container">
           <table class="data-table" id="loincTable">
             <thead>
               <tr>
-                <th>Codice LOINC</th>
-                <th>Parametro Clinico</th>
-                <th>HealthKit Type</th>
-                <th>Unità UCUM</th>
-                <th>Fattore / Regola di Normalizzazione</th>
+                <th scope="col">Codice LOINC</th>
+                <th scope="col">Parametro Clinico</th>
+                <th scope="col">Target Storage (Doppio Binario)</th>
+                <th scope="col">Unità UCUM</th>
+                <th scope="col">Fattore / Regola di Normalizzazione</th>
               </tr>
             </thead>
             <tbody>
@@ -845,28 +856,28 @@
                 <td><strong>Glucosio (Moli/Volume)</strong></td>
                 <td><code>.bloodGlucose</code></td>
                 <td><code>mmol/L</code></td>
-                <td>Conversione molare: \(\times 18.0182\) \(\to\) mg/dL</td>
+                <td>Conversione molare: &times; 18.0182 &rarr; mg/dL</td>
               </tr>
               <tr>
                 <td><span class="code-pill">2093-3</span></td>
                 <td><strong>Colesterolo Totale</strong></td>
-                <td><code>.dietaryCholesterol</code></td>
+                <td><code>SwiftData FHIR R4 Vault</code></td>
                 <td><code>mg/dL</code></td>
-                <td>Gate fisiologico: [20, 1000] mg/dL</td>
+                <td>Isolamento chimica clinica; Gate: [20, 1000] mg/dL</td>
               </tr>
               <tr>
                 <td><span class="code-pill">2085-9</span></td>
                 <td><strong>Colesterolo HDL</strong></td>
-                <td><code>.dietaryCholesterol</code></td>
+                <td><code>SwiftData FHIR R4 Vault</code></td>
                 <td><code>mg/dL</code></td>
-                <td>Gate fisiologico: [5, 300] mg/dL</td>
+                <td>Isolamento chimica clinica; Gate: [5, 300] mg/dL</td>
               </tr>
               <tr>
                 <td><span class="code-pill">2571-8</span></td>
                 <td><strong>Trigliceridi</strong></td>
-                <td><code>.dietaryFatTotal</code></td>
+                <td><code>SwiftData FHIR R4 Vault</code></td>
                 <td><code>mg/dL</code></td>
-                <td>Se mmol/L \(\to \times 88.57\) \(\to\) mg/dL</td>
+                <td>Se mmol/L &rarr; &times; 88.57 &rarr; mg/dL (FHIR Observation)</td>
               </tr>
               <tr>
                 <td><span class="code-pill">8480-6</span></td>
@@ -891,49 +902,49 @@
               </tr>
               <tr>
                 <td><span class="code-pill">2708-6</span></td>
-                <td><strong>Saturazione Ossigeno (\(SpO_2\))</strong></td>
+                <td><strong>Saturazione Ossigeno (SpO<sub>2</sub>)</strong></td>
                 <td><code>.oxygenSaturation</code></td>
                 <td><code>%</code></td>
-                <td>Se frazione \([0.1, 1.0] \to \times 100\); Gate: [50, 100]%</td>
+                <td>Se frazione [0.1, 1.0] &rarr; &times; 100; Gate: [50, 100]%</td>
               </tr>
               <tr>
                 <td><span class="code-pill">8310-5</span></td>
                 <td><strong>Temperatura Corporea</strong></td>
                 <td><code>.bodyTemperature</code></td>
                 <td><code>Cel</code></td>
-                <td>Se Fahrenheit \(\to (F - 32) \times \frac{5}{9}\) \(\to\) °C</td>
+                <td>Se Fahrenheit &rarr; (F &minus; 32) &times; 5/9 &rarr; &deg;C</td>
               </tr>
               <tr>
                 <td><span class="code-pill">29463-7</span></td>
                 <td><strong>Massa Corporea (Peso)</strong></td>
                 <td><code>.bodyMass</code></td>
                 <td><code>kg</code></td>
-                <td>Se libbre ([lb_av]) \(\to \times 0.453592\) \(\to\) kg</td>
+                <td>Se libbre ([lb_av]) &rarr; &times; 0.453592 &rarr; kg</td>
               </tr>
               <tr>
                 <td><span class="code-pill">39156-5</span></td>
                 <td><strong>Indice di Massa Corporea (BMI)</strong></td>
                 <td><code>.bodyMassIndex</code></td>
                 <td><code>kg/m2</code></td>
-                <td>Gate fisiologico: [5, 100] kg/m\(^2\)</td>
+                <td>Gate fisiologico: [5, 100] kg/m<sup>2</sup></td>
               </tr>
               <tr>
                 <td><span class="code-pill">2951-2</span></td>
                 <td><strong>Sodio nel Siero</strong></td>
-                <td><code>.dietarySodium</code></td>
+                <td><code>SwiftData FHIR R4 Vault</code></td>
                 <td><code>mmol/L</code></td>
-                <td>Normalizzazione stechiometrica: \(\times 22.99\) \(\to\) mg</td>
+                <td>Isolamento elettroliti sierici; Gate: [110, 180] mmol/L</td>
               </tr>
               <tr>
                 <td><span class="code-pill">2823-3</span></td>
                 <td><strong>Potassio nel Siero</strong></td>
-                <td><code>.dietaryPotassium</code></td>
+                <td><code>SwiftData FHIR R4 Vault</code></td>
                 <td><code>mmol/L</code></td>
-                <td>Normalizzazione stechiometrica: \(\times 39.10\) \(\to\) mg</td>
+                <td>Isolamento elettroliti sierici; Gate: [2.0, 9.0] mmol/L</td>
               </tr>
               <tr>
                 <td><span class="code-pill">94122-8</span></td>
-                <td><strong>Massimo Consumo Ossigeno (\(VO_2\) max)</strong></td>
+                <td><strong>Massimo Consumo Ossigeno (VO<sub>2</sub> max)</strong></td>
                 <td><code>.vo2Max</code></td>
                 <td><code>mL/kg/min</code></td>
                 <td>Unità HealthKit nativa: mL/kg*min</td>
@@ -983,6 +994,7 @@
       </div>
     </div>
   </section>
+  </main>
 
   <!-- Footer -->
   <footer class="site-footer">

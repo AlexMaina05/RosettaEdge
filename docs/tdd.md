@@ -105,20 +105,20 @@ Oltre all'estrazione numerica, il motore formatta i JSON finali in architetture 
 - `http://hl7.org/fhir/uv/ips/StructureDefinition/Bundle-uv-ips`
 Tale iniezione rende l'esportazione valida e compatibile con tutti gli EMR ospedalieri dell'Unione Europea.
 
-### 4.3 Mappatura Semantica e LOINC Target
-Il bridge (`HealthKitBridge.swift`) mappa i codici internazionali LOINC su tipi nativi Apple tramite uno struct `MetricTarget`.
+### 4.3 Mappatura Semantica e Doppio Binario LOINC
+Il bridge (`HealthKitBridge.swift`) instrada i parametri vitali su `HKQuantityTypeIdentifier` e isola la chimica clinica nel vault crittografato SwiftData sotto forma di risorse FHIR R4 `Observation` (Doppio Binario Semantico).
 
-| Metrica (Categoria) | LOINC (Primary) | HKQuantityTypeIdentifier | Fallback Unit |
-|---------------------|-----------------|--------------------------|---------------|
+| Metrica (Categoria) | LOINC (Primary) | Target Storage (Doppio Binario) | Unità UCUM |
+|---------------------|-----------------|---------------------------------|------------|
 | **Metabolismo** (Glicemia) | `15074-8` | `.bloodGlucose` | `mg/dL` |
-| **Profilo Lipidico** (Colesterolo Totale) | `2093-3` | `.dietaryCholesterol` | `mg/dL` |
-| **Profilo Lipidico** (Trigliceridi) | `2571-8` | `.dietaryFatTotal` | `g` |
+| **Profilo Lipidico** (Colesterolo Totale) | `2093-3` | `SwiftData FHIR R4 Vault` | `mg/dL` |
+| **Profilo Lipidico** (Trigliceridi) | `2571-8` | `SwiftData FHIR R4 Vault` | `mg/dL` |
 | **Cardiologia** (Pressione Sistolica) | `8480-6` | `.bloodPressureSystolic` | `mmHg` |
 | **Cardiologia** (HRV - SDNN) | `80404-7` | `.heartRateVariabilitySDNN` | `ms` |
 | **Antropometria** (BMI) | `39156-5` | `.bodyMassIndex` | `count` |
 | **Antropometria** (Massa Grassa) | `41982-0` | `.bodyFatPercentage` | `%` |
-| **Vitamine** (Vitamina D) | `1649-3` | `.dietaryVitaminD` | `mcg` |
-| **Minerali** (Magnesio) | `19123-9` | `.dietaryMagnesium` | `mg` |
+| **Vitamine** (Vitamina D Sierica) | `1649-3` | `SwiftData FHIR R4 Vault` | `ng/mL` |
+| **Minerali** (Magnesio Sierico) | `19123-9` | `SwiftData FHIR R4 Vault` | `mg/dL` |
 
 *(Nota: La tabella sovrastante è un estratto. L'architettura supporta oltre 30 mappature LOINC native, includendo tossicologia, elettroliti e fitness avanzato come il VO2 Max).*
 
@@ -220,9 +220,9 @@ Per la certificazione di stabilità biomedica, il framework core usa una suite d
 - **Edge Cases & Resilience**: Valutazione della tolleranza d'errore se un referto medico è malformato (es. privo di intestazione o di *Patient ID*), garantendo che la pipeline fallisca silenziosamente (*Fail Gracefully*) senza generare eccezioni non gestite (crash a runtime).
 
 
-## Aggiornamenti Architetturali (iOS 26 & Swift 6)
+## Aggiornamenti Architetturali (iOS 17+ & Swift 6 Ready)
 - **Performance:** Risolto un memory leak critico implementando `HealthKitBridge` come Singleton globale.
-- **UI/UX:** Implementato il modificatore custom `.liquidGlass()` retrocompatibile e poi promosso a API nativa per iOS 26.
+- **UI/UX:** Implementato il modificatore custom `.liquidGlass()` basato su materiali traslucidi SwiftUI compatibili con iOS 17.0+.
 - **Concorrenza:** Migrazione completa a `@Observable` e introduzione di `VaultModelActor` per query thread-safe in background.
 
 ### 7.4 Backup iCloud e CloudKit (Opt-In)

@@ -6,7 +6,7 @@ Benvenuto in **RosettaEdge**, l'unica app progettata per tradurre i tuoi referti
 
 ## 1. Installazione
 
-1. Apri l'**App Store** sul tuo iPhone (richiede iOS 26.0 o successivo).
+1. Apri l'**App Store** sul tuo iPhone (richiede iOS 17.0 o successivo).
 2. Cerca **RosettaEdge** e tocca **Ottieni**.
 3. Al termine del download, l'app apparirà nella tua schermata Home.
 
@@ -69,7 +69,7 @@ Puoi inviare i referti PDF scaricati dal tuo Fascicolo Sanitario Elettronico (FS
 ## 5. Manutenzione e Sincronizzazione in Background
 
 Non devi fare nulla per mantenere i dati aggiornati:
-* **Elaborazione Notturna:** L'app utilizzerà la batteria residua di notte per elaborare enormi pile di referti non ancora scansionati, fancedoti trovare i grafici pronti al mattino.
+* **Elaborazione Notturna:** L'app utilizzerà la batteria residua di notte per elaborare enormi pile di referti non ancora scansionati, facendoti trovare i grafici pronti al mattino.
 * **Aggiornamento Manuale:** Nel Vault, puoi fare uno *Swipe verso il basso* (Pull-to-Refresh) per forzare l'app a ri-verificare tutti i referti pendenti.
 
 ---

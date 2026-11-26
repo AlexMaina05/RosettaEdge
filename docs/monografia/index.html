@@ -19,7 +19,7 @@
   <meta property="og:description" content="Monografia tecnica indipendente e specifica architetturale per l'interoperabilità semantica Zero-Cloud tra FSE 2.0 (HL7 CDA R2) e Apple HealthKit. DOI: 10.5281/zenodo.23781231.">
   <meta property="og:image" content="https://alexmaina.dev/RosettaEdge/assets/images/rosetta-edge.webp">
   <meta property="og:locale" content="it_IT">
-  <meta property="og:site_name" content="Alessandro Mainardi">
+  <meta property="og:site_name" content="alexmaina.dev">
   <meta property="article:author" content="https://alexmaina.dev/about/">
   <meta property="article:published_time" content="2026-10-28T16:00:00+01:00">
 
@@ -28,7 +28,7 @@
   <meta name="twitter:title" content="RosettaEdge: Monografia Tecnica Ufficiale (44 Pagine)">
   <meta name="twitter:description" content="Trattato formale e specifica mobile edge Zero-Cloud per FSE 2.0 e Apple HealthKit. DOI: 10.5281/zenodo.23781231.">
   <meta name="twitter:image" content="https://alexmaina.dev/RosettaEdge/assets/images/rosetta-edge.webp">
-  <meta name="twitter:creator" content="@AlexMaina05">
+  <meta name="twitter:creator" content="@Alex_Maina_">
 
   <!-- Google Scholar & Academic Indexing (Highwire Press Meta Tags) -->
   <meta name="citation_title" content="RosettaEdge: Un'Architettura Mobile Edge Zero-Cloud per l'Interoperabilità Semantica tra Fascicolo Sanitario Elettronico (HL7 CDA) e Apple HealthKit">
@@ -128,7 +128,7 @@
       --border-accent: rgba(0, 229, 255, 0.3);
       --text: #f1f5f9;
       --text-muted: #94a3b8;
-      --text-dim: #64748b;
+      --text-dim: #94a3b8;
       --accent: #00e5ff;
       --accent-secondary: #38bdf8;
       --accent-purple: #8b5cf6;
@@ -475,7 +475,17 @@
     @media (max-width: 768px) {
       .paper-title { font-size: 1.75rem; }
       .viewer-iframe { height: 600px; }
-      .nav-links { display: none; }
+      .nav-container { flex-wrap: wrap; gap: 10px; }
+      .nav-links {
+        display: flex;
+        width: 100%;
+        overflow-x: auto;
+        gap: 14px;
+        white-space: nowrap;
+        padding-bottom: 4px;
+        scrollbar-width: none;
+      }
+      .nav-links::-webkit-scrollbar { display: none; }
     }
   </style>
 </head>
@@ -507,7 +517,7 @@
         RosettaEdge: Un'Architettura Mobile Edge Zero-Cloud per l'Interoperabilità Semantica tra Fascicolo Sanitario Elettronico (HL7 CDA) e Apple HealthKit
       </h1>
       <p class="paper-subtitle">
-        Trattato formale di ingegneria del software sanitario. Formalizzazione del parsing SAX streaming ad allocazione costante \(\mathcal{O}(d_{\max})\), pipeline di validazione anagrafica Identity Firewall, Doppio Binario Semantico (Vitals vs. Chimica Clinica FHIR R4) e benchmark empirici su hardware fisico Apple A17 Pro e A15 Bionic.
+        Trattato formale di ingegneria del software sanitario. Formalizzazione del parsing SAX streaming ad allocazione costante <code>O(d<sub>max</sub>)</code>, pipeline di validazione anagrafica Identity Firewall, Doppio Binario Semantico (Vitals vs. Chimica Clinica FHIR R4) e benchmark empirici su hardware fisico Apple A17 Pro e A15 Bionic.
       </p>
 
       <div class="author-card">
@@ -588,7 +598,7 @@
           La digitalizzazione dei referti clinici nell'ambito del Fascicolo Sanitario Elettronico (FSE 2.0) ha prodotto una disponibilità senza precedenti di dati sanitari per i cittadini. Tuttavia, l'esperienza utente sui dispositivi mobili rimane frammentata: i documenti clinici vengono prevalentemente erogati come file PDF non strutturati, impedendo l'integrazione continua con i framework di telemetria fisiologica nativi come Apple HealthKit. Questo lavoro presenta l'architettura formale di <strong>RosettaEdge</strong>, un framework mobile-edge nativo in Swift 5.10 progettato per l'interoperabilità semantica deterministica e zero-cloud tra lo standard HL7 Clinical Document Architecture (CDA) Release 2 e Apple HealthKit.
         </p>
         <p class="abstract-text">
-          La sicurezza e la riservatezza dei dati sono garantite a livello strutturale mediante l'<strong>Identity Firewall</strong>, che applica una distanza metrica normalizzata di Jaro-Winkler con fallback su Levenshtein sull'intestazione anagrafica per prevenire iniezioni accidentali di dati di terzi, e dal <strong>Doppio Binario Semantico</strong>, che isola i campioni biometrici fisiologici (HKQuantitySample) dai referti di chimica clinica complessi archiviati nel vault locale crittografato SwiftData sotto forma di risorse standard FHIR R4. La valutazione empirica su hardware fisico (iPhone 15 Pro con Apple A17 Pro e iPhone 13 con Apple A15 Bionic) dimostra che il parsing streaming a passaggio singolo mantiene una complessità spaziale \(\mathcal{O}(d_{\max})\) con picco di soli 4.2 MB di RAM e latenza end-to-end compresa tra 32.5 ms e 409.1 ms.
+          La sicurezza e la riservatezza dei dati sono garantite a livello strutturale mediante l'<strong>Identity Firewall</strong>, che applica una distanza metrica normalizzata di Jaro-Winkler con fallback su Levenshtein sull'intestazione anagrafica per prevenire iniezioni accidentali di dati di terzi, e dal <strong>Doppio Binario Semantico</strong>, che isola i campioni biometrici fisiologici (HKQuantitySample) dai referti di chimica clinica complessi archiviati nel vault locale crittografato SwiftData sotto forma di risorse standard FHIR R4. La valutazione empirica su hardware fisico (iPhone 15 Pro con Apple A17 Pro e iPhone 13 con Apple A15 Bionic) dimostra che il parsing streaming a passaggio singolo mantiene una complessità spaziale <code>O(d<sub>max</sub>)</code> con picco di soli 4.2 MB di RAM e latenza end-to-end compresa tra 32.5 ms e 409.1 ms.
         </p>
       </div>
 
@@ -611,22 +621,22 @@
         <div class="toc-card">
           <div class="toc-num">CAPITOLO 01</div>
           <div class="toc-title">Introduzione e Contesto</div>
-          <div class="toc-desc">Il paradosso del PDF sanitario (\textit{data tomb}), analisi della centralizzazione cloud e formalizzazione dei 6 contributi scientifici di RosettaEdge.</div>
+          <div class="toc-desc">Il paradosso del PDF sanitario (<em>data tomb</em>), analisi della centralizzazione cloud e formalizzazione dei 6 contributi scientifici di RosettaEdge.</div>
         </div>
         <div class="toc-card">
           <div class="toc-num">CAPITOLO 02</div>
-          <div class="toc-title">Stato dell'Arte & Standard</div>
+          <div class="toc-title">Stato dell'Arte &amp; Standard</div>
           <div class="toc-desc">Analisi comparativa: FSE 2.0 (DPCM 29/09/2023), ontologie LOINC e UCUM, Apple HealthKit e lo standard HL7 FHIR R4.</div>
         </div>
         <div class="toc-card">
           <div class="toc-num">CAPITOLO 03</div>
-          <div class="toc-title">Architettura Zero-Cloud & Sicurezza</div>
-          <div class="toc-desc">Paradigma mobile edge computing, modello di minaccia formale STRIDE, isolamento biometrico Secure Enclave e conformità GDPR Art. 9 & 25.</div>
+          <div class="toc-title">Architettura Zero-Cloud &amp; Sicurezza</div>
+          <div class="toc-desc">Paradigma mobile edge computing, modello di minaccia formale STRIDE, isolamento biometrico Secure Enclave e conformità GDPR Art. 9 &amp; 25.</div>
         </div>
         <div class="toc-card">
           <div class="toc-num">CAPITOLO 04</div>
           <div class="toc-title">Il Rosetta Transcoder Engine</div>
-          <div class="toc-desc">Parser SAX streaming streaming ad allocazione costante \(\mathcal{O}(d_{\max})\), pipeline Identity Firewall (Jaro-Winkler) e architettura a Doppio Binario Semantico.</div>
+          <div class="toc-desc">Parser SAX streaming ad allocazione costante <code>O(d<sub>max</sub>)</code>, pipeline Identity Firewall (Jaro-Winkler) e architettura a Doppio Binario Semantico.</div>
         </div>
         <div class="toc-card">
           <div class="toc-num">CAPITOLO 05</div>
@@ -650,8 +660,8 @@
         </div>
         <div class="toc-card">
           <div class="toc-num">CAPITOLO 09</div>
-          <div class="toc-title">Appendici Ontologiche & Schemi</div>
-          <div class="toc-desc">Matrici LOINC \(\rightarrow\) HealthKit / FHIR, payload XML CDA annotato, specifica XcodeGen e modello di citazione formale.</div>
+          <div class="toc-title">Appendici Ontologiche &amp; Schemi</div>
+          <div class="toc-desc">Matrici LOINC &rarr; HealthKit / FHIR R4, payload XML CDA annotato, specifica XcodeGen e modello di citazione formale.</div>
         </div>
       </div>
     </section>

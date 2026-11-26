@@ -1,15 +1,7 @@
 # ⚕️ RosettaEdge 
 **Il ponte mobile edge on-device tra il Fascicolo Sanitario Elettronico (FSE) e Apple Health.**
 
-[![Author](https://img.shields.io/badge/Author-Alessandro_Mainardi-00e5ff?style=for-the-badge)](https://alexmaina.dev/)
-[![ORCID](https://img.shields.io/badge/ORCID-0009--0003--7003--7247-A6CE39?style=for-the-badge&logo=orcid&logoColor=white)](https://orcid.org/0009-0003-7003-7247)
-[![Wikidata](https://img.shields.io/badge/Wikidata-Q141886579-3399CC?style=for-the-badge&logo=wikidata&logoColor=white)](https://www.wikidata.org/wiki/Q141886579)
-[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.23781231-007EC6?style=for-the-badge)](https://doi.org/10.5281/zenodo.23781231)
-[![iOS 17+](https://img.shields.io/badge/iOS-17.0%2B-black?style=for-the-badge&logo=apple)](https://apple.com)
-[![watchOS 10+](https://img.shields.io/badge/watchOS-10.0%2B-black?style=for-the-badge&logo=apple)](https://apple.com)
-[![Swift 5.10](https://img.shields.io/badge/Swift-5.10-F05138?style=for-the-badge&logo=swift)](https://swift.org)
-[![Zero Cloud](https://img.shields.io/badge/Architecture-Zero_Cloud-2b2b2b?style=for-the-badge)](#)
-[![License](https://img.shields.io/badge/License-CC_BY_4.0-4CAF50?style=for-the-badge)](https://creativecommons.org/licenses/by/4.0/)
+**Autore:** [Alessandro Mainardi](https://alexmaina.dev/) · **ORCID:** [0009-0003-7003-7247](https://orcid.org/0009-0003-7003-7247) · **Wikidata:** [Q141886579](https://www.wikidata.org/wiki/Q141886579) · **DOI:** [10.5281/zenodo.23781231](https://doi.org/10.5281/zenodo.23781231) · **Target:** iOS 17.0+ / watchOS 10.0+ (Swift 5.10) · **Architettura:** Zero-Cloud · **Licenza:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
 > **RosettaEdge** non è un semplice lettore PDF; è una *pipeline invisibile e sicura* progettata per restituire ai pazienti il controllo sui propri dati medici. Sviluppata interamente in Swift (nativa), estrae i referti complessi (FSE 2.0) e li traduce in grafici interattivi all'interno di Apple Salute... il tutto senza che un singolo byte abbandoni il tuo iPhone.
 
@@ -110,18 +102,18 @@ Trattando *categorie particolari di dati personali (Art. 9 GDPR)*, l'app applica
 
 ---
 
-## 📊 Metriche Cliniche Supportate
+## 📊 Metriche Cliniche Supportate (Doppio Binario Semantico)
 
-Il motore di mappatura semantica trasla i codici identificativi (LOINC) presenti nel FSE direttamente nella tassonomia di `HKQuantityTypeIdentifier` di Apple:
+Il motore di mappatura semantica instrada i parametri vitali direttamente nella tassonomia `HKQuantityTypeIdentifier` di Apple e archivia gli analiti di chimica clinica nel vault crittografato locale SwiftData sotto forma di risorse standard FHIR R4:
 
-| Categoria | Nome Parametro | LOINC (Esempi) | Identificativo Apple Salute |
-|-----------|----------------|----------------|-----------------------------|
-| 🩸 **Metabolismo** | Glicemia / Glucosio | `15074-8`, `2345-7` | `bloodGlucose` |
-| 🫀 **Cardiologia** | Pressione, Battito, HRV, VO2 Max | `8480-6`, `80404-7` | `bloodPressureSystolic`, `heartRateVariabilitySDNN` |
-| 🍔 **Profilo Lipidico** | Colesterolo (Tot, HDL, LDL), Trigliceridi | `2093-3`, `2571-8` | `dietaryCholesterol`, `dietaryFatTotal` |
-| ⚖️ **Antropometria** | Peso, Altezza, BMI, Massa Grassa | `29463-7`, `39156-5` | `bodyMass`, `bodyMassIndex` |
-| 💊 **Vitamine** | Vitamina D, C | `32309-7`, `32220-6` | `dietaryVitaminD`, `dietaryVitaminC` |
-| 🧪 **Elettroliti** | Sodio, Potassio nel Siero | `2951-2`, `2823-3` | `dietarySodium`, `dietaryPotassium` |
+| Categoria | Nome Parametro | LOINC (Esempi) | Target Storage (Doppio Binario) |
+|-----------|----------------|----------------|---------------------------------|
+| 🩸 **Metabolismo** | Glicemia / Glucosio | `15074-8`, `2345-7` | `HKQuantityType (.bloodGlucose)` |
+| 🫀 **Cardiologia** | Pressione, Battito, HRV, VO2 Max | `8480-6`, `80404-7` | `HKQuantityType (.bloodPressureSystolic, .heartRateVariabilitySDNN)` |
+| 🧬 **Profilo Lipidico** | Colesterolo (Tot, HDL, LDL), Trigliceridi | `2093-3`, `2571-8` | `SwiftData FHIR R4 Vault (Observation)` |
+| ⚖️ **Antropometria** | Peso, Altezza, BMI, Massa Grassa | `29463-7`, `39156-5` | `HKQuantityType (.bodyMass, .bodyMassIndex)` |
+| 💊 **Vitamine Sieriche** | Vitamina D, B12, Folati | `32309-7`, `2132-9` | `SwiftData FHIR R4 Vault (Observation)` |
+| 🧪 **Elettroliti Sierici** | Sodio, Potassio nel Siero | `2951-2`, `2823-3` | `SwiftData FHIR R4 Vault (Observation)` |
 
 ---
 

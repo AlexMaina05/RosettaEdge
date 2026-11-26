@@ -185,7 +185,7 @@
         ⚙️ RosettaTranscoder &amp; Mapping
       </text>
       <text x="14" y="44" font-family="monospace" font-size="11" fill="#e2e8f0">
-        LOINC: 2093-3 → HKQuantityType
+        LOINC: 15074-8 → HKQuantityType
       </text>
       <text x="14" y="60" font-family="monospace" font-size="11" fill="#a7f3d0">
         Unit: mg/dL → mg/dL (1:1 Isomorfo)
@@ -225,10 +225,10 @@
   </g>
 
   <!-- Flow Connector Center -> Right -->
-  <g transform="translate(778, 290)">
-    <line x1="0" y1="0" x2="40" y2="0" stroke="#10b981" stroke-width="2.5" stroke-dasharray="4,4"/>
-    <polygon points="44,0 36,-5 36,5" fill="#10b981"/>
-    <text x="2" y="-12" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="700" fill="#34d399">HK STORE</text>
+  <g transform="translate(776, 290)">
+    <line x1="0" y1="0" x2="42" y2="0" stroke="#10b981" stroke-width="2.5" stroke-dasharray="4,4"/>
+    <polygon points="46,0 38,-5 38,5" fill="#10b981"/>
+    <text x="23" y="-12" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="9.5" font-weight="700" fill="#34d399">HK / VAULT</text>
   </g>
 
   <!-- ================= RIGHT COLUMN: APPLE HEALTHKIT & CLIENTS ================= -->
@@ -245,17 +245,17 @@
     <rect x="220" y="16" width="75" height="20" rx="4" fill="#10b981" fill-opacity="0.18" stroke="#10b981" stroke-width="1"/>
     <text x="228" y="30" font-family="monospace" font-size="10" font-weight="700" fill="#34d399">ENCRYPTED</text>
 
-    <!-- Destination 1: HKQuantitySample -->
+    <!-- Destination 1: HKQuantitySample & FHIR Vault -->
     <g transform="translate(18, 68)">
       <rect x="0" y="0" width="274" height="74" rx="8" fill="#0f172a" stroke="#1e293b"/>
       <text x="14" y="22" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="700" fill="#f43f5e">
-        ❤️ HKClinicalRecord &amp; Samples
+        ❤️ Doppio Binario Semantico
       </text>
       <text x="14" y="42" font-family="monospace" font-size="11" fill="#94a3b8">
         HKQuantityType: .bloodGlucose
       </text>
       <text x="14" y="60" font-family="monospace" font-size="11" fill="#94a3b8">
-        HKQuantityType: .cholesterol
+        SwiftData Vault: FHIR R4 Obs.
       </text>
     </g>
 
@@ -303,33 +303,33 @@
   <g id="footer-meta" transform="translate(60, 532)">
     <rect x="0" y="0" width="1080" height="64" rx="10" fill="#0b1220" stroke="#1e293b" stroke-width="1.2"/>
     
-    <!-- Author & Affiliation -->
+    <!-- Author & Independent Attribution -->
     <text x="24" y="28" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" font-weight="700" fill="#ffffff">
       Autore: Alessandro Mainardi
     </text>
     <text x="24" y="48" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" fill="#94a3b8">
-      Alma Mater Studiorum - Università di Bologna (DISI)
+      Progetto Indipendente Open-Source • alexmaina.dev
     </text>
 
     <!-- Persistent Identifiers -->
-    <g transform="translate(420, 16)">
-      <rect x="0" y="0" width="160" height="32" rx="6" fill="#1e293b" stroke="#334155"/>
-      <text x="12" y="21" font-family="monospace" font-size="11" fill="#38bdf8">ORCID: 0009-0003-7003-7247</text>
+    <g transform="translate(376, 16)">
+      <rect x="0" y="0" width="186" height="32" rx="6" fill="#1e293b" stroke="#334155"/>
+      <text x="12" y="20" font-family="Consolas, monospace" font-size="11" fill="#38bdf8">ORCID: 0009-0003-7003-7247</text>
     </g>
 
-    <g transform="translate(595, 16)">
-      <rect x="0" y="0" width="125" height="32" rx="6" fill="#1e293b" stroke="#334155"/>
-      <text x="12" y="21" font-family="monospace" font-size="11" fill="#a78bfa">Wikidata: Q141886579</text>
+    <g transform="translate(572, 16)">
+      <rect x="0" y="0" width="148" height="32" rx="6" fill="#1e293b" stroke="#334155"/>
+      <text x="12" y="20" font-family="Consolas, monospace" font-size="11" fill="#a78bfa">Wikidata: Q141886579</text>
     </g>
 
-    <g transform="translate(735, 16)">
-      <rect x="0" y="0" width="180" height="32" rx="6" fill="#10b981" fill-opacity="0.15" stroke="#10b981"/>
-      <text x="12" y="21" font-family="monospace" font-size="11" font-weight="700" fill="#34d399">DOI: 10.5281/zenodo.23781231</text>
+    <g transform="translate(730, 16)">
+      <rect x="0" y="0" width="198" height="32" rx="6" fill="#10b981" fill-opacity="0.15" stroke="#10b981"/>
+      <text x="12" y="20" font-family="Consolas, monospace" font-size="11" font-weight="700" fill="#34d399">DOI: 10.5281/zenodo.23781231</text>
     </g>
 
-    <g transform="translate(930, 16)">
-      <rect x="0" y="0" width="130" height="32" rx="6" fill="#00e5ff" fill-opacity="0.12" stroke="#00e5ff"/>
-      <text x="12" y="21" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="700" fill="#00e5ff">📄 PAPER 41 PAG.</text>
+    <g transform="translate(938, 16)">
+      <rect x="0" y="0" width="124" height="32" rx="6" fill="#00e5ff" fill-opacity="0.12" stroke="#00e5ff"/>
+      <text x="11" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" font-weight="700" fill="#00e5ff">📄 PAPER 44 PAG.</text>
     </g>
   </g>
 </svg>
